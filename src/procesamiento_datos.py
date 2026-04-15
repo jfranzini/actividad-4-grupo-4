@@ -5,32 +5,15 @@ Created on Wed Apr 15 15:06:37 2026
 @author: bausi
 """
 
-def preparar_datos(datos):
-    
+def preparar_datos(datos):  
     '''
     Prepara los datos para el analisis.
-    
     Parametros: 
         - datos: lista de registros validos.
-        
-    Retorna:
-        - list: datos procesados.
-        
-    '''
-    def preparar_datos(datos):
-
-    '''
-    Prepara los datos para el análisis.
-
-    Parametros:
-        - datos: lista de registros válidos.
-
     Retorna:
         - list: datos procesados.
     '''
-
     datos_procesados = []
-
     for registro in datos:
         nuevo_registro = {
             "id_participante": registro["id_participante"],
