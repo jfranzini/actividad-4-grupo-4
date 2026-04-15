@@ -25,4 +25,3 @@ def preparar_datos(datos):
         datos_procesados.append(nuevo_registro)
 
     return datos_procesados
-    return datos
