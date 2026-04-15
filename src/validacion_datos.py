@@ -65,7 +65,7 @@ def filtrar_registros_validos(datos):
             datos_validos.append(registro_valido)
         
         except Exception as error:
-            raise Exception("errror en registro", error)
+           print("Error en registro", numero_registro, ":", error)
             
         numero_registro += 1
     
