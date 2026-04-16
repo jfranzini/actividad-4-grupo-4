@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Apr 15 15:08:08 2026
-
-@author: bausi
-"""
 
 def calcular_metricas(datos):
     
@@ -14,6 +8,8 @@ def calcular_metricas(datos):
     Retorna:
         -dict: resultados.  
     '''
+    if len(datos) == 0:
+        raise ValueError("No hay datos válidos para calcular métricas")
 
     total_tiempo = 0
     total_uso = 0

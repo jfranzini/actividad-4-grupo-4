@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Apr 15 15:02:09 2026
-
-@author: bausi
-"""
 
 def cargar_datos(ruta):
     
@@ -14,25 +8,22 @@ def cargar_datos(ruta):
         - ruta: ruta de el archivo.
         
     Retorna:
-        - list: registros del sistema
+        - list: lista de diccionarios con los registros del sistema
         
     '''
     datos = []
-    try:
-        with open(ruta, "r") as archivo:
-            for linea in archivo:
-                partes = linea.strip().split(",")
-
-                registro = {
-                    "id_participante": int(partes[0]),
-                    "fecha": partes[1],
-                    "app": partes[2],
-                    "cantidad_uso": int(partes[3]),
-                    "tiempo_uso": int(partes[4])}
-                datos.append(registro)
+    with open(ruta, "r", encoding="utf-8") as archivo:
+        for linea in archivo:
+            partes = linea.strip().split(",")
+            
+            registro = {
+                "id_participante": int(partes[0]),
+                "fecha": partes[1],
+                "app": partes[2],
+                "cantidad_uso": int(partes[3]),
+                "tiempo_uso": int(partes[4])
+            }
            
-                
-    except Exception as e: 
-        print("Error al cargar datos:", e)
-        
+            datos.append(registro)
+           
     return datos

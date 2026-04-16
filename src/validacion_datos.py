@@ -29,6 +29,9 @@ def validar_registro(registro):
         if app == "":
             raise ValueError("La app esta vacia")
             
+        if id_participante < 0:
+            raise ValueError("El id_participante no puede ser negativo")
+
         if cantidad_uso < 0:
             raise ValueError("cantidad_uso no puede ser negativa")
             
@@ -38,16 +41,16 @@ def validar_registro(registro):
         return {"id_participante": id_participante, "fecha": fecha, "app": app, "cantidad_uso": cantidad_uso, "tiempo_uso": tiempo_uso}
     
     except KeyError as error:
-        raise KeyError("falta el campo", error)
+        raise KeyError(f"Falta el campo obligatorio: {error}")
         
     except ValueError as error:
-        raise ValueError("error de validacion", error)
+        raise ValueError(f"Error de validación: {error}")
     
     
 def filtrar_registros_validos(datos):
     
     '''
-    Valida los regsitros del sistema.
+    Valida los registros del sistema.
     
     Parametros:
         - datos: lista de registros.
